@@ -72,6 +72,7 @@ $sqr->setWidth(5);
 
 $obj = new CostManager();
 echo $obj->calculate($sqr);
+  
 ?>
 </body>
 </html>
