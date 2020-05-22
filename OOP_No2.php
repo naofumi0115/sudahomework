@@ -3,7 +3,7 @@
 
 <body>
 
-  <?
+  <?php
   abstract class Emailer
   {
     protected $sender;
