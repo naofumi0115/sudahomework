@@ -1,65 +1,77 @@
 <!DOCTYPE html>
 <html>
+
 <body>
   <?php
 
-  interface AreaInterface{
+  interface AreaInterface
+  {
     public  function calculateArea();
   }
 
-  class Rectangle implements AreaInterface{
+  class Rectangle implements AreaInterface
+  {
     protected $width;
     protected $height;
 
     public function setWidth($width)
     {
-        $this->width = $width;
+      $this->width = $width;
     }
 
     public function setHeight($height)
     {
-        $this->height = $height;
+      $this->height = $height;
     }
 
-    public  function calculateArea(){
+    public  function calculateArea()
+    {
       $area = $this->width * $this->height;
+      echo $area;
+    }
+  }
+
+  class Square implements AreaInterface{
+
+    public $width;
+
+    public function set_width($width){
+      $this->width = $width;
+    }
+
+    public function calculateArea(){
+      $area = $this->width * $this->width;
       return $area;
     }
-}
 
-class Square extends Rectangle
-{
-    public function setWidth($width)
-    {
-        parent::setWidth($width);
-        parent::setHeight($width);
-    }
 
-}
+  }
 
-class Circle implements AreaInterface{
+  class Circle implements AreaInterface
+  {
     public $radius;
     public function setRadius($radius)
     {
-        $this->radius = $radius;
+      $this->radius = $radius;
     }
 
-    public  function calculateArea(){
+    public  function calculateArea()
+    {
       $area = $this->radius * $this->radius;
       return $area;
     }
+  }
 
-
-}
-
-class CostManager{
+  class CostManager
+  {
     public function calculate($shape)
     {
-        $costPerUnit = 1.5;
-        $totalCost = $costPerUnit * $shape->calculateArea();
-        return $totalCost;
+      $costPerUnit = 1.5;
+      $totalCost = $costPerUnit * $shape->calculateArea();
+      return $totalCost;
     }
-}
+  }
+
 $circle = new Circle();
 $circle->setRadius(5);
 
@@ -68,11 +80,11 @@ $rect->setWidth(8);
 $rect->setHeight(5);
 
 $sqr = new Square();
-$sqr->setWidth(5);
+$sqr->set_width(5);
 
 $obj = new CostManager();
 echo $obj->calculate($sqr);
-  
-?>
+  ?>
 </body>
+
 </html>
