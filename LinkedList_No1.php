@@ -92,6 +92,7 @@ $list_1->insert(2);
 $list_1->insert(5);
 $list_1->insert(2);
 $list_1->insert(3);
+$list_1->insert(10);
 
 $list_1->delete_number(10);
 
