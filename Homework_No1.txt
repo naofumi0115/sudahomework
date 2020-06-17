@@ -1,0 +1,7 @@
+CREATE TABLE new_agents
+SELECT * FROM`agents` 
+WHERE `agents`.`WORKING_AREA` = 'London'
+AND`agents`.`AGENT_CODE` IN (
+    SELECT `customer`.`AGENT_CODE` 
+    FROM `customer`
+    WHERE `customer`.`CUST_COUNTRY` = 'UK' )
