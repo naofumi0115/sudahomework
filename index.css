@@ -1,0 +1,210 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 10000px;
+}
+
+
+
+header div:first-child {
+    border: 1px solid #fff;
+    padding: 10px;
+    width: 50%;
+}
+
+#slogan {
+  color: #fff;
+  font-weight: normal;
+  font-size: 1.5em;
+  font-family: 'EB Garamond', serif;
+  letter-spacing: 0.1em;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+  padding-top: 0.1em;
+}
+
+#slogan::before, .slogan::after {
+  content: "§";
+  display: inline-block;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  opacity: 0.2;
+  margin: 0 0.5em;
+  font-size: 1em;
+}
+
+#search form {
+    float: right;
+    margin-top: 14px;
+    position: relative;
+    width: 170px;
+    height: 40%;
+}
+
+#search{
+    float:right;
+}
+
+#search form input {
+    padding: 6px;
+}
+
+#search form i {
+    position: absolute;
+    right: 13px;
+    top: 5px;
+    color: green;
+}
+
+nav {
+    border: 1px solid #ccc;
+}
+
+nav ul {
+    /* allow centering to work  */
+    display: table;
+    margin: 0 auto;
+}
+
+nav ul li {
+    display: inline-block;
+    height: 15px;
+    padding: 20px;
+}
+
+#main {
+    display: grid;
+    grid-template-columns: 75% auto;
+    grid-column-gap: 10px;
+    min-height: 500px;
+}
+
+#main-content, #sidebar {
+    padding: 5px 20px;
+    border: 1px solid;
+}
+
+#sidebar ul li {
+    padding: 10px 0;
+}
+
+footer {
+    background-color: #5F524F;
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: auto 75%;
+}
+
+header, footer {
+    background-color: #5F524F;
+    padding: 20px;
+}
+
+header {
+    display: grid;
+    height: 100px;
+    grid-template-columns: 20% 60% 20%;
+    justify-content: center;
+    align-content: center;
+    background-color: #5F524F;
+    padding: 0px 20px 20px 20px;
+}
+
+#scroll {
+    width: 40px;
+    height: 40px;
+
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+
+    background-color: rgba(2, 129, 1, 0.85);
+    text-align: center;
+}
+
+#scroll a { color: #fff; }
+#scroll i { margin-top: 8px; }
+
+#log {
+    height:100px;
+    color: #000;
+}
+
+.login_form{
+    height: 280px;
+    width: 300px;
+    position:absolute; 
+    top:90px; left:70%;
+    background-color: #fff;
+    z-index: 1;
+    border: solid 1px #ccc;
+    text-align: center;
+    display: none;
+}
+
+.login_form ul {
+    list-style:none;
+    padding:  0px;
+}
+
+.login_form li{
+    height: 50px;
+}
+
+.form_des{
+    height: 35px;
+    width: 180px;
+    border-radius: 8px;
+    border: #fff;
+    background-color: #ccc;
+}
+
+.login{
+    background-color: green;
+    height: 35px;
+    width: 150px;
+    border-radius: 20px;
+    border: #fff;
+    color: #fff;
+    margin-top: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.login:hover{
+    opacity: 0.5;
+}
+
+
+#guest{
+    position: relative;
+    top:40px;
+    right: 90px;
+    width: 80px;
+}
+
+.login_btn{
+    color: #fff;
+}
+
+span{
+    color: green;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+td {
+	border: solid 1px;
+	padding: 0.5em;
+}
+
+#user_table{
+    display: none;
+}
