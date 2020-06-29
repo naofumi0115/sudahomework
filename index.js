@@ -36,16 +36,14 @@ window.addEventListener('load', () => {
 let words = ["you" , "are" , "practice" , "with" , "html" , "and" , "css"]
 
 window.addEventListener('keypress' , function(){
-
     var key = event.key;
 
     if (key == "Enter"){
-    let form = document.getElementById("textarea")
-    let word = form.value;
+        let form = document.getElementById("textarea")
+        let word = form.value;
         word = word.toLowerCase();
-        console.log(word);
 
-    for (i = 0; i <= words.length; i++){
+    for (i = 0; i < words.length; i++){
         if(word == words[i]){
             log.innerHTML = "You are practice with HTML and CSS";
             break;
@@ -69,15 +67,6 @@ function display() {
 
 function none(){
     document.getElementById("hidden_form").style.display = "none";
-}
-
-function login(){
-    if (document.getElementById("name").value == "suda"){
-        if (document.getElementById("pass").value == "suda"){
-            document.getElementById("guest").textContent = "Hisuda";
-            document.getElementById("hidden_form").style.display = "none";
-        }
-    }
 }
 
 function display_table(){
