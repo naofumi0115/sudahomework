@@ -22,27 +22,28 @@
         <div id="form">
             <ul>
                 <li>Hi<?php
-                        if (!isset($_SESSION['LOGGED_IN'])) {
-                        ?><span>Guest</span><?php
-                                        } else {
-                                            ?><span>pav</span><?php
-                                                            } ?>
+                if (!isset($_SESSION['LOGGED_IN'])) {
+                    ?><span>Guest</span><?php
+                } else {
+                    ?><span>pav</span><?php
+                    } ?>
                 </li>
                 <li><a href="javascript:void(0)" onclick="showLoginForm()">Login</a></li>
+                <li>
+                    <form id="logout" method="post" action="/logout">
+                        <button type="submit" name="Login">Logout</button>
+                    </form>
+                </li>
             </ul>
 
             <form id="login" method="post" action="/login">
                 <input type="text" name="username" placeholder="User name" value=<?php
-                                                                                    if (isset($_SESSION['rem_name'])) {
-                                                                                        echo $_SESSION['rem_name'];
-                                                                                    } ?>>
+                if (isset($_SESSION['rem_name'])) {
+                    echo $_SESSION['rem_name'];
+                    } ?>>
                 <input type="password" name="password" placeholder="Password" />
                 <label><input type="checkbox" name="rememberUsername" />Remember user name </label>
                 <button type="submit" name="Login">Login</button>
-                <form id="logout" method="post" action="/login">
-                    <input type = hidden value="logout" name="log">
-                    <button type="submit" name="Login">Logout</button>
-                </form>
             </form>
             <form method="GET" id="search">
                 <input type="text" name="keyword" />
@@ -67,10 +68,9 @@
             <?php
             if (!isset($_SESSION['LOGGED_IN'])) {
             ?><h3>You are not logged in!!! please login to view more info</h3><?php
-                                                                            } else {
-                                                                                ?><h3>The main content go here</h3><?php
-                                                                                                                }
-                                                                                                                    ?>
+        } else {
+            ?><h3>The main content go here</h3><?php
+            }?>
         </div>
         <div id="sidebar">
             <h3> Sidebar </h3>
