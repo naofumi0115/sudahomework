@@ -1,3 +1,18 @@
+<?php
+
+$judg = false;
+
+if(!empty($_POST)){
+    $username = $_POST['username'];
+    $pass = $_POST['password'];
+    if ($username == "suda" && $pass == "suda"){
+        $judg = true;
+    }else{
+        $judg = false;
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,13 +25,13 @@
 
 <body>
     <div class = "login_form" id = "hidden_form">
-        <form action="javascript:void(0);" method="GET">
+        <form action="" method="POST">
             <ul>
-            <li><input class = "form_des" id="name" type="text"  placeholder="User name"/></li>
-            <li><input class = "form_des" id="pass" type="text"  placeholder="Password"/></li>
+            <li><input class = "form_des" id="name" type="text"  placeholder="User name" name = "username"/></li>
+            <li><input class = "form_des" id="pass" type="text"  placeholder="Password" name = "password"/></li>
             <li><input type="checkbox" value="0"> Remember user name</li>
             <li><input class = "login" step="submit" value="CLOSE" onclick="none()"></li>
-            <li><input class = "login" type="submit" value="LOGIN" onclick="login()"></li>
+            <li><input class = "login" type="submit" value="LOGIN" name = "login"></li>
             </ul>
         </form>
     </div>
@@ -24,7 +39,14 @@
         <div>The logo</div>
         <div id="slogan" class="slogan">The header slogan</div>
         <div id="search">
-            <p id = "guest">Hi<span>Guest</span></p>
+            <p id = "guest">Hi<span>
+                <?php
+                if ($judg){
+                    ?>suda<?php
+                }else{
+                    ?>Guest<?php
+                }?>
+            </span></p>
             <a class="login_btn" href="javascript:void(0);" onclick="display()">login</a>
             <form action = "javascript:void(0);" method="GET">
                 <input id = "textarea" type="text" name="keyword" />
